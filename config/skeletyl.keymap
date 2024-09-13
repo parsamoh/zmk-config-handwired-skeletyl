@@ -14,8 +14,6 @@
 #define ILLUST  6
 #define GAME    7
 
-#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
-
 / {
     behaviors {
         as: auto_shift {
@@ -168,17 +166,17 @@
 
         num_layer {
             bindings = <
-    &none       &none       &none       &none       &none       AS(LBKT)        AS(N7)      AS(N8)      AS(N9)  AS(RBKT)
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(EQUAL)       AS(N4)      AS(N5)      AS(N6)  AS(SEMI)
-    &none       &none       &none       &none       &none       AS(GRAVE)       AS(N1)      AS(N2)      AS(N3)  AS(BSLH)
-                            &none       &trans      &none       &as LPAR DOT    &as RPAR N0 AS(MINUS)
+    &none       &none       &none       &none       &none       LS(LBKT) LBKT        LS(N7) N7      LS(N8) N8      LS(N9) N9  LS(RBKT) RBKT
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       LS(EQUAL) EQUAL       LS(N4) N4      LS(N5) N5      LS(N6) N6  LS(SEMI) SEMI
+    &none       &none       &none       &none       &none       LS(GRAVE) GRAVE       LS(N1) N1      LS(N2) N2      LS(N3) N3  LS(BSLH) BSLH
+                            &none       &trans      &none       &as LPAR DOT    &as RPAR N0 LS(MINUS) MINUS
             >;
         };
 
        prgrm_layer {
            bindings = <
     &none       &none       &none       &none       &none       &none   &none       &none       &none   &none
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none   AS(LBKT)    AS(RBKT)    &none   AS(SEMI)
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none   LS(LBKT) LBKT    LS(RBKT) RBKT    &none   LS(SEMI) SEMI
     &none       &none       &none       &none       &none       &none   &kp EXCL    &kp EQUAL   &none   &kp FSLH
                             &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
             >;
